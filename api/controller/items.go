@@ -3,6 +3,7 @@ package controller
 import (
 	"bcg/ecommerce/api/response"
 	"bcg/ecommerce/api/service"
+	"errors"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -24,6 +25,10 @@ func (ic itemsController) Checkout(ctx *gin.Context) {
 	var ids []string
 	if err := ctx.ShouldBindJSON(&ids); err != nil {
 		wrapBadRequestError(ctx, err)
+		return
+	}
+	if len(ids) == 0 {
+		wrapBadRequestError(ctx, errors.New("empty request"))
 		return
 	}
 	if err := ic.itemsService.Validate(ids); err != nil {

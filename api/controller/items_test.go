@@ -74,3 +74,16 @@ func (suite *ItemsControllerTestSuite) TestCheckout_InvalidJSONRequest() {
 	suite.Assert().Equal(http.StatusBadRequest, w.Result().StatusCode)
 	suite.Assert().Equal(`{"message":"invalid character '0' after array element"}`, w.Body.String())
 }
+
+func (suite *ItemsControllerTestSuite) TestCheckout_EmptyRequest() {
+	w := httptest.NewRecorder()
+	ctx, _ := gin.CreateTestContext(w)
+
+	req, _ := http.NewRequest(http.MethodPost, "/checkout", strings.NewReader(`[]`))
+	ctx.Request = req
+
+	suite.controller.Checkout(ctx)
+
+	suite.Assert().Equal(http.StatusBadRequest, w.Result().StatusCode)
+	suite.Assert().Equal(`{"message":"empty request"}`, w.Body.String())
+}
