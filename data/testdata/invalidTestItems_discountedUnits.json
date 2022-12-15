@@ -1,0 +1,8 @@
+[
+    {
+        "id" : "001",
+        "brandName" :"Rolex",
+        "unitPrice" : 100,
+        "discount" : "3a for 200"
+    }
+]

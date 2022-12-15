@@ -1,0 +1,13 @@
+[
+    {
+        "id" : "001",
+        "brandName" :"Rolex",
+        "unitPrice" : 100,
+        "discount" : "3 for 200"
+    },
+    {
+        "id" : "004",
+        "brandName" :"Casio",
+        "unitPrice" : 30
+    }
+]

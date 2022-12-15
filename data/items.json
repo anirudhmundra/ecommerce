@@ -1,0 +1,30 @@
+[
+    {
+        "id" : "001",
+        "brandName" :"Rolex",
+        "unitPrice" : 100,
+        "discount" : {
+            "minUnits" : 3,
+            "totalPrice" : 200
+        }
+    },
+    {
+        "id" : "002",
+        "brandName" :"Michael Kors",
+        "unitPrice" : 80,
+        "discount" : {
+            "minUnits" : 2,
+            "totalPrice" : 120
+        }
+    },
+    {
+        "id" : "003",
+        "brandName" :"Swatch",
+        "unitPrice" : 50
+    },
+    {
+        "id" : "004",
+        "brandName" :"Casio",
+        "unitPrice" : 30
+    }
+]
