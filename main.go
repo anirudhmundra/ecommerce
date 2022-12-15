@@ -3,6 +3,7 @@ package main
 import (
 	"bcg/ecommerce/config"
 	"bcg/ecommerce/data"
+	"bcg/ecommerce/router"
 	"os"
 
 	"github.com/rs/zerolog"
@@ -21,4 +22,5 @@ func main() {
 		logger.Fatal().Msgf("unable to load data :%-v", err)
 	}
 	logger.Info().Msgf("%d items have been loaded", len(items))
+	router.SetupRouter(items).Run()
 }
